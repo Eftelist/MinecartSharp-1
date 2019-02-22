@@ -38,8 +38,7 @@ namespace MinecartSharp.Networking.Packets
         }
 
         public void Write(Client client, Message message, params object[] arguments)
-        {
-            
+        {            
         }
     }
 }

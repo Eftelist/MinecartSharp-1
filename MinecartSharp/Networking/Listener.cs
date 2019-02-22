@@ -88,6 +88,7 @@ namespace MinecartSharp.Networking
 
             if (client.State == ConnectionState.Play)
             {
+                MinecartSharp.GetServer().BroadcastMessage(client.Username + " left the game");
                 Logger.Log(LogType.Info, client.Username + " left the game");
             }
 

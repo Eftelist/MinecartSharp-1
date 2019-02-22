@@ -15,8 +15,7 @@ namespace MinecartSharp.Networking.Packets
         public ConnectionState State => ConnectionState.Play;
 
         public void Read(Client client, Message message)
-        {
-            
+        {           
         }
 
         public void Write(Client client, Message message, params object[] arguments)

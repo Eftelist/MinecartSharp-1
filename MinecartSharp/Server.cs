@@ -5,6 +5,7 @@ using System.Text;
 using MinecartSharp.Enums;
 using MinecartSharp.Networking;
 using MinecartSharp.Networking.Objects;
+using MinecartSharp.Objects;
 
 namespace MinecartSharp
 {
@@ -41,6 +42,11 @@ namespace MinecartSharp
         {
             // TODO: Return an player object
             return _clients.Where(x => x.State == ConnectionState.Play).ToList();
+        }
+
+        public void BroadcastMessage(string message)
+        {
+            GetPlayers().ForEach(x => x.SendMessage(message));
         }
 
         public void AddClient(Client client)

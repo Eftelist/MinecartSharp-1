@@ -5,6 +5,7 @@ using System.Text;
 using MinecartSharp.Utils;
 using MinecartSharp.Enums;
 using MinecartSharp.Networking.Objects;
+using MinecartSharp.Objects;
 
 namespace MinecartSharp.Networking.Packets
 {
@@ -17,6 +18,8 @@ namespace MinecartSharp.Networking.Packets
         public void Read(Client client, Message message)
         {
             var username = message.ReadUsername();
+
+            Console.WriteLine(username);
 
             client.Username = username;
 
@@ -37,6 +40,8 @@ namespace MinecartSharp.Networking.Packets
             // set state to play
             client.State = ConnectionState.Play;
             client.StartKeepAlive();
+
+            MinecartSharp.GetServer().BroadcastMessage(client.Username + " joined the game");
 
             // write mc:brand plugin packet
             // TODO: Actually make this packet work should probably be an byte array

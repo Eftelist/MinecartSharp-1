@@ -17,7 +17,8 @@ namespace MinecartSharp.Networking
             new JoinGame(),
             new PlayerPosition(),
             new SpawnPosition(),
-            new Disconnect()
+            new Disconnect(),
+            new ChatMessage()
         };
 
         public static IPacket GetPacket(int id, ConnectionState state)

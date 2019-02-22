@@ -36,6 +36,18 @@ namespace MinecartSharp.Networking.Objects
             TcpClient.Close();
         }
 
+        public void SendMessage(string content)
+        {
+            var chat = new Chat() { Text = content };
+
+            var message = new Message(TcpClient.GetStream());
+            var packet = PacketHandler.GetPacket(0x02, ConnectionState.Play);
+
+            packet.Write(this, message, chat);
+
+            message.Dispose();
+        }
+
         public void SendData(byte[] data)
         {
             try

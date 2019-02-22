@@ -36,7 +36,8 @@ namespace MinecartSharp.Networking.Packets
                 {
                     Max = MinecartSharp.GetConfig().MaxPlayers,
                     Online = MinecartSharp.GetServer().GetPlayers().Count,
-                    Players = MinecartSharp.GetServer().GetPlayers().Select(x => new ServerpingPlayer(){ Name = x.Username }).ToList()
+                    // TODO: fix corrupt packet if one or more players connected
+                    //Players = MinecartSharp.GetServer().GetPlayers().Select(x => new ServerpingPlayer(){ Name = x.Client.Username }).ToList()
                 },
                 Description = new ServerpingDescription()
                 {

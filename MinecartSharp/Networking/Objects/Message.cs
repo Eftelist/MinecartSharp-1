@@ -107,7 +107,6 @@ namespace MinecartSharp.Networking.Objects
                 return BitConverter.ToInt16(new byte[2] { (byte)i, (byte)o }, 0);
             else
                 return BitConverter.ToInt16(new byte[2] { (byte)o, (byte)i }, 0);
-
         }
 
         public string ReadString()

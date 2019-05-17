@@ -13,7 +13,8 @@ namespace MinecartSharp
         public string Motd { get; set; } = "§cMinecartSharp Server";
 
         public bool DebugMode { get; set; } = false;
-
+        
+        //TODO: Favicon
         [JsonIgnore]
         public string Favicon { get; set; } = "";
     }

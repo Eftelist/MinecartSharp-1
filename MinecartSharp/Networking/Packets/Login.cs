@@ -43,12 +43,13 @@ namespace MinecartSharp.Networking.Packets
 
             MinecartSharp.GetServer().BroadcastMessage(client.Username + " joined the game");
 
-            // write mc:brand plugin packet
-            // TODO: Actually make this packet work should probably be an byte array
-            new PluginMessage().Write(client, message, "minecraft:brand", "MinecartSharp");
-
             // also write join game packet
             PacketHandler.GetPacket(0x25, client.State).Write(client, message);
+            
+            // write mc:brand plugin packet
+            new PluginMessage().Write(client, message, "minecraft:brand", "MinecartSharp");
+
+
         }
     }
 }
